@@ -2,7 +2,7 @@ from pathlib import Path
 
 def organize_files():
     
-# Lista com os nomes dos Tipos de arquivos que estamos separando(Adicione mais Tipos Caso queira)
+# Lista com os Tipos de arquivos que estamos separando(Adicione mais Tipos Caso queira)
     types = ['exe', 'txt', 'jpg', 'png', 'pdf', 'docx', 'zip']
 
  # Diretorio da pasta Downlouds 
@@ -14,7 +14,7 @@ def organize_files():
         new_folder.mkdir(exist_ok=True)
 
 #Cria a pasta de arquivos gerais (Arquivos que não estão na lista {types})
-    general_folder_name = "Arquivos Gerais" # O nome do variavel ficou muito grande! :(
+    general_folder_name = "Arquivos Gerais"
     folder_path = raiz / general_folder_name
     folder_path.mkdir(exist_ok=True)
     
