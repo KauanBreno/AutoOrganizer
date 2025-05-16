@@ -14,21 +14,22 @@ def organize_files():
         new_folder.mkdir(exist_ok=True)
 
 #Cria a pasta de arquivos gerais (Arquivos que não estão na lista {types})
-    general_folder_name = "Arquivos Gerais"
-    folder_path = raiz / general_folder_name
+    general_folder_name = "Arquivos Gerais" # Nome do diretório de pastas e arquivos não classificados
+    folder_path = raiz / general_folder_name 
     folder_path.mkdir(exist_ok=True)
     
 # Laço de repetição que adiciona os arquivos em suas respectivas pastas classificas pelo tipo de arquivos
-    for type in types:
-        for file in raiz.glob(f"*.{type}"):
+    for type in types: 
+        for file in raiz.glob(f"*.{type}"): 
             file_name = file.name
             new_path_folder = raiz / type / file_name
-            file.rename(new_path_folder)
+            if not new_path_folder.exists():
+                file.rename(new_path_folder)
     
     
 # Laço de repetição que adiciona Pastas ou arquivos não classificados na pasta "Arquivos Gerais" 
     for folder in raiz.iterdir():
-        if folder.is_dir() and folder.name not in types:
+        if folder.name not in types:
             if folder != folder_path:
                 Dest = folder_path / folder.name
                 if not Dest.exists():
