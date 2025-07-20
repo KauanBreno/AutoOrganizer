@@ -27,7 +27,7 @@ Ideal pra quem quer dar um fim na bagunça da pasta de downloads com um clique s
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
+git clone https://github.com/KauanBreno/AutoOrganizer
 cd AutoOrganizer
 ```
 
